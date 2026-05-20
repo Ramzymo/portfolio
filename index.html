@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ramzy Mohamed Ahmed â Python Developer & AI Automation Specialist</title>
+<meta name="description" content="I build AI-powered automation tools and web applications that eliminate repetitive work for businesses. Available for freelance projects and remote roles." />
+<meta name="author" content="Ramzy Mohamed Ahmed" />
+
+<!-- Open Graph (LinkedIn / Twitter / WhatsApp link previews) -->
+<meta property="og:title" content="Ramzy Mohamed Ahmed â Python Developer & AI Automation Specialist" />
+<meta property="og:description" content="I build AI-powered automation tools that eliminate repetitive work for businesses. Open to freelance & remote roles." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ramzymo.vercel.app/" />
+
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --bg-elev: #131826;
+    --bg-card: #1a2032;
+    --border: #252b3d;
+    --text: #e6e9f2;
+    --text-muted: #8b93a8;
+    --text-dim: #5c6478;
+    --accent: #00d9a3;
+    --accent-soft: rgba(0, 217, 163, 0.12);
+    --accent-glow: rgba(0, 217, 163, 0.4);
+    --gradient: linear-gradient(135deg, #00d9a3 0%, #2dd4bf 50%, #06b6d4 100%);
+    --shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Subtle ambient gradient */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(0, 217, 163, 0.07), transparent 50%),
+      radial-gradient(circle at 85% 100%, rgba(6, 182, 212, 0.06), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(10, 14, 26, 0.7);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 16px 0;
+  }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+  }
+  .logo-dot {
+    color: var(--accent);
+    margin-left: 2px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--accent);
+    color: var(--bg) !important;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .nav-cta:hover { opacity: 0.9; }
+  @media (max-width: 640px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 96px 0 80px;
+  }
+  .availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    border: 1px solid var(--accent-soft);
+  }
+  .availability::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent-glow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+  }
+  .hero h1 .grad {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: clamp(17px, 2vw, 20px);
+    color: var(--text-muted);
+    max-width: 640px;
+    margin-bottom: 36px;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn-secondary:hover {
+    border-color: var(--text-muted);
+    background: var(--bg-elev);
+  }
+
+  /* ============ SECTIONS ============ */
+  section {
+    padding: 72px 0;
+  }
+  .section-eyebrow {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .section-lead {
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 640px;
+    margin-bottom: 48px;
+  }
+
+  /* ============ SERVICES ============ */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    transition: all 0.25s ease;
+  }
+  .service-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .service-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .service-card p {
+    color: var(--text-muted);
+    font-size: 15px;
+  }
+
+  /* ============ PROJECTS ============ */
+  .projects {
+    display: grid;
+    gap: 24px;
+  }
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s ease;
+  }
+  .project-card:hover {
+    border-color: var(--accent);
+  }
+  .project-card.featured {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elev) 100%);
+    border-color: rgba(0, 217, 163, 0.2);
+  }
+  .project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .project-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .project-card .project-sub {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .project-card p {
+    color: var(--text);
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .project-stack {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .stack-tag {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .project-links {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+  }
+  .project-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .project-links a:hover { text-decoration: underline; }
+  .placeholder-card {
+    border-style: dashed;
+    background: transparent;
+    text-align: center;
+    padding: 48px 32px;
+  }
+  .placeholder-card .project-sub { font-style: italic; }
+
+  /* ============ SKILLS ============ */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .skill-cat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .skill-cat h4 {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .skill-cat ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-cat li {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  /* ============ ABOUT ============ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+  .about-grid p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .stat-value {
+    color: var(--accent);
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  /* ============ CONTACT ============ */
+  .contact-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elev) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 56px;
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    .contact-card { padding: 36px 24px; }
+  }
+  .contact-card h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .contact-card p {
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    font-size: 17px;
+  }
+  .contact-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    color: var(--text-dim);
+    font-size: 14px;
+    text-align: center;
+  }
+  footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--accent); }
+
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">Ramzy<span class="logo-dot">.</span></div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<header class="hero">
+  <div class="container">
+    <div class="availability">Available for freelance &amp; remote roles</div>
+    <h1>
+      I build <span class="grad">AI-powered automation</span><br />
+      that saves businesses hours every week.
+    </h1>
+    <p>
+      I'm Ramzy â a Python developer based in Alexandria, Egypt. I design and ship inbox triage tools, workflow automations, scrapers, and AI integrations for founders and small teams who want their software to work for them, not the other way around.
+    </p>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary">See my work â</a>
+      <a href="#contact" class="btn btn-secondary">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== SERVICES ========== -->
+<section id="services">
+  <div class="container">
+    <div class="section-eyebrow">What I do</div>
+    <h2 class="section-title">Three things I'm good at</h2>
+    <p class="section-lead">Built around real business problems, not portfolio fluff. Each of these is something I'll happily ship for a client tomorrow.</p>
+
+    <div class="services">
+      <div class="service-card">
+        <div class="service-icon">â¡</div>
+        <h3>AI &amp; LLM integrations</h3>
+        <p>OpenAI &amp; Gemini-powered tools that classify, summarize, draft, or extract. Custom prompts, safe defaults, production-ready.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">â</div>
+        <h3>Workflow automation</h3>
+        <p>Python scripts and lightweight web apps that automate repetitive tasks â report generation, email triage, data syncs, scraping.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">â</div>
+        <h3>Full-stack web apps</h3>
+        <p>FastAPI backends, React frontends, OAuth, REST APIs. End-to-end product builds for founders who need a single technical partner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section id="work">
+  <div class="container">
+    <div class="section-eyebrow">Selected work</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-lead">A live portfolio is more useful than a long rÃ©sumÃ©. Each project below has a working demo, source code, and a writeup.</p>
+
+    <div class="projects">
+
+      <div class="project-card featured">
+        <div class="project-status">ð  In development Â· Shipping this month</div>
+        <h3>InboxIQ â AI Email Triage &amp; Reply Assistant</h3>
+        <div class="project-sub">A web app that classifies Gmail inboxes by priority and drafts contextual replies using Gemini.</div>
+        <p>Built for people drowning in email. Connects to Gmail via OAuth, pulls recent messages, classifies them into Urgent / Needs Reply / FYI / Newsletter / Spam, then generates short reply drafts the user can edit and send back through Gmail. End-to-end production system with auth, third-party API integration, and a clean dashboard.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">FastAPI</span>
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">Tailwind</span>
+          <span class="stack-tag">Gemini API</span>
+          <span class="stack-tag">Gmail API</span>
+          <span class="stack-tag">OAuth 2.0</span>
+          <span class="stack-tag">SQLite</span>
+        </div>
+        <div class="project-links">
+          <a href="#" aria-disabled="true">Live demo (coming soon)</a>
+          <a href="https://github.com/Ramzymo" target="_blank" rel="noopener">GitHub â</a>
+        </div>
+      </div>
+
+      <div class="project-card placeholder-card">
+        <div class="project-status">ð¯ Next up Â· Project #2</div>
+        <h3>Coming in Phase 3</h3>
+        <div class="project-sub">A second case-study-quality build to be revealed in Month 2.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-eyebrow">Toolbox</div>
+    <h2 class="section-title">Skills</h2>
+    <p class="section-lead">I prefer depth in a few tools over name-dropping. These are what I actually work in day-to-day.</p>
+
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <h4>Languages</h4>
+        <ul>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>C++</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h4>Backend</h4>
+        <ul>
+          <li>FastAPI</li>
+          <li>REST APIs</li>
+          <li>OAuth 2.0</li>
+          <li>SQLite</li>
+          <li>API integration</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h4>Frontend</h4>
+        <ul>
+          <li>React (learning)</li>
+          <li>Tailwind CSS</li>
+          <li>Vanilla JS</li>
+          <li>Responsive design</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h4>AI &amp; Automation</h4>
+        <ul>
+          <li>Gemini API</li>
+          <li>OpenAI API</li>
+          <li>Prompt engineering</li>
+          <li>Workflow automation</li>
+          <li>Web scraping</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h4>Tools &amp; Platforms</h4>
+        <ul>
+          <li>Git / GitHub</li>
+          <li>Vercel</li>
+          <li>Render</li>
+          <li>Linux basics</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+      <div class="skill-cat">
+        <h4>Languages (human)</h4>
+        <ul>
+          <li>Arabic (native)</li>
+          <li>English (fluent)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about">
+  <div class="container">
+    <div class="section-eyebrow">About</div>
+    <h2 class="section-title">A bit about me</h2>
+
+    <div class="about-grid">
+      <div>
+        <p>I'm a Computer Science student at <strong>Egyptian Japanese University (E-JUST)</strong> in Alexandria. Alongside my studies, I work as a Programming Advisor at VAPCO NDT Inspection Company, where I build internal tools and automations.</p>
+        <p>I'm deliberately positioning my career around remote work and AI-powered automation â a field that's exploding in 2026 and rewards people who can ship real products end-to-end. My focus is on building tools that solve actual business problems, not impressive-looking demos.</p>
+        <p>I work fluently across European, US, and Gulf time zones, communicate cleanly in English, and bring a builder's mindset to every project. If you're a founder or team looking for a reliable technical partner who can move fast â let's talk.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-value">10+</div>
+          <div class="stat-label">Technologies in active use</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2026</div>
+          <div class="stat-label">CS graduation (expected)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3+ yrs</div>
+          <div class="stat-label">Workplace experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Remote-ready</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <div class="section-eyebrow">Get in touch</div>
+      <h2>Let's build something.</h2>
+      <p>Have a project in mind, a workflow eating your time, or a remote role you think I'd be a fit for? I read every message and reply within 24 hours.</p>
+      <div class="contact-links">
+        <a href="mailto:ahmed.mazal@ejust.edu.eg" class="btn btn-primary">Email me</a>
+        <a href="https://github.com/Ramzymo" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
+        <a href="https://linkedin.com/in/ramzymohamedahmed" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Ramzy Mohamed Ahmed Â· Built with HTML &amp; CSS, deployed on Vercel Â· <a href="https://github.com/Ramzymo" target="_blank" rel="noopener">View source on GitHub</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
